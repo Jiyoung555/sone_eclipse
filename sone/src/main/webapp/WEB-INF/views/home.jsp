@@ -11,7 +11,7 @@
 ${sessionScope.email}
 
 <c:if test="${email == null}">
-	<p>비로그인 상태입니다</p>
+	<p>비로그인 상태입니다.</p>
 </c:if>
 
 <c:if test="${email != null }">
