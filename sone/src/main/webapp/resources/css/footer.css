@@ -1,0 +1,36 @@
+.footer-bottom{
+	background-color: #f2f2f2;
+	border: 1px solid #d9d9d9;
+	
+	position: fixed;
+	bottom:0px;
+	width: 100%;
+	
+	display: flex;
+	
+}
+
+.footer-bottom .left{
+	flex: 3;
+}
+
+.footer-bottom .left p{
+	font-size: 14px;
+	margin-top: 12px;
+}
+
+.footer-bottom .right{
+	flex: 3;
+	
+	display: flex;
+	justify-content: flex-end;
+	
+	margin-top: 12px;
+}
+
+.footer-bottom .right a{
+	margin-right: 5px;
+	color: black;
+	
+	font-size: 14px;
+}

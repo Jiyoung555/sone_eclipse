@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ItemMapper">
+
+	<!-- 생성 -->
+	<insert id="create">
+		insert into item (name, content, price, imagename, stock, useyn) 
+		values(#{name}, #{content}, #{price}, #{imagename}, #{stock}, #{useyn})
+	</insert>
+	
+	<!-- 조회 -->
+	<select id="read" resultType="ItemVO">
+		select 
+		  item_id, name, content, price, imagename, stock, useyn 
+		from 
+		  item 
+		where item_id = #{item_id}
+	</select>
+	
+	<!-- 수정 -->
+	<update id="update">
+		update item set name = #{name}, content = #{content}, price = #{price}, 
+			imagename = #{imagename}, stock = #{stock}, useyn = #{useyn} 
+		where item_id = #{item_id}
+	</update>
+	
+	<!-- 삭제 -->
+	<delete id="delete">
+		delete from item where item_id = #{item_id}
+	</delete>
+	
+	
+	<!-- ListAll(전체 글목록) -->
+	<select id="listAll" resultType="ItemVO">
+	<![CDATA[
+		select 
+		  item_id, name, content, price, imagename, stock, useyn  
+		from 
+		  item 
+		where item_id > 0 
+		order by item_id asc
+	]]>  
+	</select>
+	
+	
+	<!-- 재고 수량 빼기 -->
+	<update id="removeStock">
+		update item set stock = stock - #{count}
+		where item_id = #{item_id}
+	</update>
+	
+	<!-- 재고 수량 살리기 -->
+	<update id="addStock">
+		update item set stock = stock + #{count}
+		where item_id = #{item_id}
+	</update>
+</mapper>

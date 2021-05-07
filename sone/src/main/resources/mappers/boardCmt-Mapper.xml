@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="BoardCmtMapper">
+
+	<!-- 생성 -->
+	<insert id="create">
+		insert into comment (content, board_id, member_id) 
+		values(#{content}, #{board_id}, #{member_id})
+	</insert>
+	
+	<!-- 조회 -->
+	<select id="read" resultType="BoardCmtVO">
+		select 
+		  comment_id, content, board_id, member_id
+		from 
+		  comment 
+		where comment_id = #{comment_id}
+	</select>	
+	
+	<!-- 수정 -->
+	<update id="update">
+		update 
+			comment 
+		set 
+			 content = #{content}
+		where comment_id = #{comment_id}
+	</update>
+	
+	<!-- 삭제 -->
+	<delete id="delete">
+		delete from comment where comment_id = #{comment_id}
+	</delete>
+	
+	
+	<!-- ListAll -->
+	<select id="listByBoardId" resultType="BoardCmtVO">
+	<![CDATA[
+		select 
+		  comment_id, content, board_id, member_id
+		from 
+		  comment 
+		where board_id = #{board_id} 
+		order by board_id asc
+	]]>  
+	</select>
+
+</mapper>

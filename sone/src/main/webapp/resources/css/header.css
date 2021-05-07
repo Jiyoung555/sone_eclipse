@@ -1,0 +1,21 @@
+.top-menu{
+	cursor: auto; 
+	/*navbar에 menu a태그 -> a태그 아닌 척, 손모양 안 나오게끔*/
+}
+
+.header-navbar{
+	margin-bottom: 5%;
+}
+
+
+.navbar-light .navbar-nav .nav-goBold{
+	color: rgba(0,0,0,.9);
+}
+
+.navbar-light .navbar-nav .nav-admin{
+	color: red;
+}
+
+.navbar-light .navbar-nav .nav-admin:hover{
+	color: red; /*:hover은 마우스 오버시 색상 설정*/
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+    PUBLIC "-//mybatis.org//DTD config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+    
+<configuration>
+	<!-- mapUnderscoreToCamelCase 지웠음. member_id로 적어도 memberId로 바뀌길래 -->
+  
+  
+	<!-- board-Mapper.xml의 resultType에 
+	매번 com.myproject.myapp.domain.BoardVO 이렇게 클래스명까지 다 안써도 되게 설정.
+	그냥 BoardVO만 써도 되게끔 -->
+	<typeAliases>
+	 <package name="com.mycompany.sone.domain"/>
+	</typeAliases> 
+  
+</configuration>
